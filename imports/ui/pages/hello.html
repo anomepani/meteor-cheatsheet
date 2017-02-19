@@ -1,0 +1,32 @@
+<template name="hello">
+   <div>{{errorMessage}}</div>
+  {{#each hobbit in hobbits}}
+    <div>{{hobbit.name}} {{hobbit.item}}</div>
+  {{/each}}
+<!--<p>---------------------------------------</p>
+ {{#each hobbit in hobbitsZsync}}
+    <div>{{hobbit.name}}</div>
+  {{/each}}
+<p>---------------------------------------</p>
+ {{#each hobbit in hobbitsPromise}}
+    <div>{{hobbit.name}}</div>
+  {{/each}}-->
+
+</template>
+
+<template name='promiseHelloWorld'>
+<h3>We are in promiseHelloWorld template</h3>
+  {{#each hobbit in hobbits}}
+    <div>{{hobbit.name}}</div>
+  {{/each}}
+
+  </template>
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template>

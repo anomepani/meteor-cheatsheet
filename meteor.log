@@ -1,0 +1,50 @@
+[[[[[ ~/Projects/boileplate ]]]]]
+
+=> Started proxy.
+=> Started MongoDB.
+[34mW20170219-22:28:08.921(5.5)? (STDERR) [39m[35mUnhandled rejection Error: connect ECONNREFUSED 127.0.0.1:3306[39m
+[34mW20170219-22:28:09.360(5.5)? (STDERR) [39m[35m    at Object.exports._errnoException (util.js:907:11)[39m
+[34mW20170219-22:28:09.362(5.5)? (STDERR) [39m[35m    at exports._exceptionWithHostPort (util.js:930:20)[39m
+[34mW20170219-22:28:09.362(5.5)? (STDERR) [39m[35m    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1077:14)[39m
+[34mW20170219-22:28:09.363(5.5)? (STDERR) [39m[35m    at Protocol._enqueue (/home/arvind/Projects/boileplate/node_modules/mysql/lib/protocol/Protocol.js:141:48)[39m
+[34mW20170219-22:28:09.363(5.5)? (STDERR) [39m[35m    at Protocol.handshake (/home/arvind/Projects/boileplate/node_modules/mysql/lib/protocol/Protocol.js:52:41)[39m
+[34mW20170219-22:28:09.363(5.5)? (STDERR) [39m[35m    at Connection.connect (/home/arvind/Projects/boileplate/node_modules/mysql/lib/Connection.js:130:18)[39m
+[34mW20170219-22:28:09.364(5.5)? (STDERR) [39m[35m    at connect (/home/arvind/Projects/boileplate/node_modules/promise-mysql/lib/connection.js:18:33)[39m
+[34mW20170219-22:28:09.367(5.5)? (STDERR) [39m[35m    at /home/arvind/Projects/boileplate/node_modules/promise-mysql/lib/connection.js:52:9[39m
+[34mW20170219-22:28:09.375(5.5)? (STDERR) [39m[35mFrom previous event:[39m
+[34mW20170219-22:28:09.375(5.5)? (STDERR) [39m[35m    at new connection (/home/arvind/Projects/boileplate/node_modules/promise-mysql/lib/connection.js:51:12)[39m
+[34mW20170219-22:28:09.376(5.5)? (STDERR) [39m[35m    at Object.exports.createConnection (/home/arvind/Projects/boileplate/node_modules/promise-mysql/index.js:6:12)[39m
+[34mW20170219-22:28:09.377(5.5)? (STDERR) [39m[35m    at server/main.js:6:11[39m
+[34mW20170219-22:28:09.378(5.5)? (STDERR) [39m[35m    at /home/arvind/Projects/boileplate/.meteor/local/build/programs/server/boot.js:299:5[39m
+=> Started your app.
+
+=> App running at: http://localhost:3000/
+=> Server modified -- restarting...                                   [34mW20170219-22:28:26.068(5.5)? (STDERR) [39m[35mUnhandled rejection Error: connect ECONNREFUSED 127.0.0.1:3306[39m
+[34mW20170219-22:28:26.069(5.5)? (STDERR) [39m[35m    at Object.exports._errnoException (util.js:907:11)[39m
+[34mW20170219-22:28:26.069(5.5)? (STDERR) [39m[35m    at exports._exceptionWithHostPort (util.js:930:20)[39m
+[34mW20170219-22:28:26.070(5.5)? (STDERR) [39m[35m    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1077:14)[39m
+[34mW20170219-22:28:26.071(5.5)? (STDERR) [39m[35m    at Protocol._enqueue (/home/arvind/Projects/boileplate/node_modules/mysql/lib/protocol/Protocol.js:141:48)[39m
+[34mW20170219-22:28:26.072(5.5)? (STDERR) [39m[35m    at Protocol.handshake (/home/arvind/Projects/boileplate/node_modules/mysql/lib/protocol/Protocol.js:52:41)[39m
+[34mW20170219-22:28:26.072(5.5)? (STDERR) [39m[35m    at Connection.connect (/home/arvind/Projects/boileplate/node_modules/mysql/lib/Connection.js:130:18)[39m
+[34mW20170219-22:28:26.074(5.5)? (STDERR) [39m[35m    at connect (/home/arvind/Projects/boileplate/node_modules/promise-mysql/lib/connection.js:18:33)[39m
+[34mW20170219-22:28:26.075(5.5)? (STDERR) [39m[35m    at /home/arvind/Projects/boileplate/node_modules/promise-mysql/lib/connection.js:52:9[39m
+[34mW20170219-22:28:26.076(5.5)? (STDERR) [39m[35mFrom previous event:[39m
+[34mW20170219-22:28:26.077(5.5)? (STDERR) [39m[35m    at new connection (/home/arvind/Projects/boileplate/node_modules/promise-mysql/lib/connection.js:51:12)[39m
+[34mW20170219-22:28:26.079(5.5)? (STDERR) [39m[35m    at Object.exports.createConnection (/home/arvind/Projects/boileplate/node_modules/promise-mysql/index.js:6:12)[39m
+[34mW20170219-22:28:26.081(5.5)? (STDERR) [39m[35m    at server/main.js:6:11[39m
+[34mW20170219-22:28:26.082(5.5)? (STDERR) [39m[35m    at /home/arvind/Projects/boileplate/.meteor/local/build/programs/server/boot.js:299:5[39m
+=> Meteor server restarted
+=> Server modified -- restarting...
+Changes to your project's package version selections:
+
+accounts-base          added, version 1.2.11
+accounts-password      added, version 1.3.0
+ddp-rate-limiter       added, version 1.0.5
+email                  added, version 1.1.17
+localstorage           added, version 1.0.11
+npm-bcrypt             added, version 0.9.1
+rate-limit             added, version 1.0.5
+service-configuration  added, version 1.0.10
+sha                    added, version 1.0.8
+srp                    added, version 1.0.9
+
