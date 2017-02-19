@@ -145,15 +145,15 @@ Template.hello.onCreated(function helloOnCreated() {
     // });
 
     ////OLD CODE END
-
-    await Meteor.callPromise('assignRing', 1);
-    this.list.set(await Meteor.callPromise('getHobbits'));
-    await sleep(1000);
-    await Meteor.callPromise('assignRing', 2);
-    this.list.set(await Meteor.callPromise('getHobbits'));
-} catch (error) {
-    this.latestError.set(error.message);
-}
+    try {
+        await Meteor.callPromise('assignRing', 1);
+        this.list.set(await Meteor.callPromise('getHobbits'));
+        await sleep(1000);
+        await Meteor.callPromise('assignRing', 2);
+        this.list.set(await Meteor.callPromise('getHobbits'));
+    } catch (error) {
+        this.latestError.set(error.message);
+    }
 });
 
 Template.hello.helpers({
