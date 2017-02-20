@@ -1,13 +1,12 @@
 <template name="hello">
+<h3>We are in HelloWorld template</h3>
    <div>{{errorMessage}}</div>
   {{#each hobbit in hobbits}}
     <div>{{hobbit.name}} {{hobbit.item}}</div>
   {{/each}}
-<!--<p>---------------------------------------</p>
- {{#each hobbit in hobbitsZsync}}
+ <!--{{#each hobbit in hobbitsZsync}}
     <div>{{hobbit.name}}</div>
   {{/each}}
-<p>---------------------------------------</p>
  {{#each hobbit in hobbitsPromise}}
     <div>{{hobbit.name}}</div>
   {{/each}}-->
@@ -29,4 +28,6 @@
     <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
     <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
   </ul>
+</template>
+<template name='helloOld'>
 </template>

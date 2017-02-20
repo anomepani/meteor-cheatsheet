@@ -4,6 +4,34 @@ import { Promise } from 'meteor/promise';
 
 import './hello.html';
 
+/**
+ * Created method to understand how to wrap meteor call in Promise syntax
+ * You can use 'https://atmospherejs.com/deanius/promise' package
+ */
+export const callWithPromise = (method) => {
+    return new Promise((resolve, reject) => {
+        Meteor.call(method, (error, result) => {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(result);
+            }
+        });
+    });
+};
+
+/**
+ * Custom settimeout wrapper within Promise
+ */
+const sleep = (mS) => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve();
+        }, mS);
+    });
+};
+
+
 Template.helloOld.onCreated(function helloOnCreated() {
     // counter starts at 0
     console.log('template created');
@@ -85,33 +113,9 @@ Template.promiseHelloWorld.helpers({
     },
 });
 
-/**
- * Created method to understand how to wrap meteor call in Promise syntax
- * You can use 'https://atmospherejs.com/deanius/promise' package
- */
-export const callWithPromise = (method) => {
-    return new Promise((resolve, reject) => {
-        Meteor.call(method, (error, result) => {
-            if (error) reject(error);
-            resolve(result);
-        });
-    });
-}
-
-/**
- * Custom settimeout wrapper within Promise
- */
-const sleep = (mS) => {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            resolve();
-        }, mS);
-    });
-}
 
 
-
-Template.hello.onCreated(function helloOnCreated() {
+Template.hello.onCreated(async function helloOnCreated() {
     this.list = new ReactiveVar([]);
     this.latestError = new ReactiveVar();
     ////OLD CODE START

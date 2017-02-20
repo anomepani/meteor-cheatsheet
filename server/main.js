@@ -4,6 +4,15 @@ import mysql from 'promise-mysql';
 import { Mongo } from 'meteor/mongo';
 export const Hobbitses = new Mongo.Collection('Hobbitses');
 
+
+const connectionParameters = {
+    host: 'localhost',
+    user: 'sauron',
+    password: 'theonetruering',
+    database: 'mordor'
+};
+
+
 Meteor.startup(() => {
 
     mysql.createConnection({
@@ -53,19 +62,6 @@ Meteor.methods({
         });
         return rows; // will NOT work!
     },
-
-    async getHobbitsAsync() {
-        console.log('getHobbitsAsync called');
-        const connection = await mysql.createConnection({
-            host: 'localhost',
-            user: 'sauron',
-            password: 'theonetruering',
-            database: 'mordor'
-        });
-        const result = await connection.query('select `name` from hobbits limit 100');
-        console.log('getHobbitsAsync executed&&&');
-        return result;
-    },
     getHobbitsPromise() {
         const connection = Promise.await(mysql.createConnection({
             host: 'localhost',
@@ -91,8 +87,25 @@ Meteor.methods({
             console.log(error);
             throw new Meteor.Error('oops', 'something bad happened');
         } finally {
-            if (connection && connection.end) await connection.end(); // Let's be nice and close the connection
+            if (connection && connection.end) {
+                await connection.end();
+            } // Let's be nice and close the connection
         }
+    },
+
+    async getHobbitsAsync() {
+        console.log('getHobbitsAsync called');
+        const connection = await mysql.createConnection({
+            host: 'localhost',
+            user: 'sauron',
+            password: 'theonetruering',
+            database: 'mordor'
+        });
+        const result = await connection.query(`
+        select name from hobbits limit 100
+        `);
+        console.log('getHobbitsAsync executed&&&');
+        return result;
     },
     getHobbitsWithFiber() {
         let connection;
@@ -150,7 +163,9 @@ Meteor.methods({
         } catch (error) {
             throw new Meteor.Error('getHobbits', 'something bad happened');
         } finally {
-            if (connection && connection.end) await connection.end(); // Let's be nice and close the connection
+            if (connection && connection.end) {
+                await connection.end();
+            } // Let's be nice and close the connection
         }
     },
     async assignRing(id) {
@@ -165,7 +180,9 @@ Meteor.methods({
         } catch (error) {
             throw new Meteor.Error('assignRing', 'something bad happened');
         } finally {
-            if (connection && connection.end) await connection.end(); // Let's be nice and close the connection
+            if (connection && connection.end) {
+                await connection.end();
+            } // Let's be nice and close the connection
         }
     },
 
